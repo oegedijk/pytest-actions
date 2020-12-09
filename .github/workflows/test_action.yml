@@ -3,17 +3,15 @@ name: test_action
 
 on:
   push:
-    branches: [ master ]
-    
+    branches: [ main ]
+      
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
         os: [ubuntu-latest]
         python-version: [3.8]
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
